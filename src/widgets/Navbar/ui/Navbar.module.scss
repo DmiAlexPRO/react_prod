@@ -1,27 +1,24 @@
 .navbar {
-  width: 100%;
-  height: var(--navbar-height);
-  background-color: var(--inverted-bg-color);
-  display: flex;
-  align-items: center;
-  padding: 20px;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: var(--inverted-bg-color);
+    display: flex;
+    align-items: center;
+    padding: 20px;
 
-
-  h2{
-    color: var(--inverted-secondary-color);
-  }
-
+    h2 {
+        color: var(--inverted-secondary-color);
+    }
 }
 
-.links{
-  margin-left: auto;
+.links {
+    margin-left: auto;
 
-  a {
-    margin-right: 15px;
+    a {
+        margin-right: 15px;
 
-    &:last-child{
-      margin-right: 0;
+        &:last-child {
+            margin-right: 0;
+        }
     }
-  }
-
 }
