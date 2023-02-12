@@ -1,12 +1,15 @@
-import {FC, PropsWithChildren} from "react";
+import {FC} from 'react';
 import styles from './AppLink.module.scss';
-import {classNames} from "shared/lib/classNames";
-import {Link, LinkProps} from "react-router-dom";
+import {classNames} from 'shared/lib/classNames';
+import {Link, LinkProps} from 'react-router-dom';
 
 
 export enum AppLinkTheme {
+    // eslint-disable-next-line no-unused-vars
     PRIMARY = 'primary',
+    // eslint-disable-next-line no-unused-vars
     SECONDARY = 'secondary',
+    // eslint-disable-next-line no-unused-vars
     RED = 'red'
 }
 

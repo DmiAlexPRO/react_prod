@@ -1,12 +1,7 @@
-import path from "path";
-import HTMLWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
 import webpack from 'webpack';
-import {buildPlugins} from "./config/build/buildPlugins";
-import {buildLoaders} from "./config/build/buildLoaders";
-import {buildResolvers} from "./config/build/buildResolvers";
-import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
-import {BuildEnv, BuildPaths} from "./config/build/types/config";
-
+import {buildWebpackConfig} from './config/build/buildWebpackConfig';
+import {BuildEnv, BuildPaths} from './config/build/types/config';
 
 
 export default (env: BuildEnv) => {
@@ -26,7 +21,7 @@ export default (env: BuildEnv) => {
         mode,
         isDev,
         paths,
-        port: PORT
+        port: PORT,
     });
 
     return config;

@@ -1,9 +1,9 @@
-import {FC} from "react";
+import {FC} from 'react';
 import styles from './Navbar.module.scss';
-import {classNames} from "shared/lib/classNames";
-import {AppLink} from "shared/ui";
-import {AppLinkTheme} from "shared/ui/AppLink/AppLink";
-import {useTranslation} from "react-i18next";
+import {classNames} from 'shared/lib/classNames';
+import {AppLink} from 'shared/ui';
+import {AppLinkTheme} from 'shared/ui/AppLink/AppLink';
+import {useTranslation} from 'react-i18next';
 
 interface NavbarProps {
     className?: string,
@@ -20,4 +20,4 @@ export const Navbar: FC<NavbarProps> = ({className}) => {
             </div>
         </div>
     );
-}
+};

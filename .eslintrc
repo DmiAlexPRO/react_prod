@@ -1,0 +1,43 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": ["plugin:react/recommended", "google"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"]
+            }
+        }
+    },
+    "rules": {
+        "@typescript-eslint/indent": [2, 4],
+        "indent": ["warn", 4, { "SwitchCase": 1 }],
+        "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "react/react-in-jsx-scope": "off",
+        "no-console": ["warn", {"allow": ["warn", "error"]}],
+        "max-len": ["warn", {
+            "code": 125,
+            "ignoreComments": true
+        }],
+        "require-jsdoc": "off",
+        "no-unused-vars": "warn"
+    },
+    "globals": {
+        "_IS_DEV": true
+    }
+}
