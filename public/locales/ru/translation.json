@@ -4,5 +4,6 @@
   "lang": "Язык",
   "ru": "Русский",
   "en": "Английский",
-  "loading": "Loading"
+  "loading": "Loading",
+  "notFoundPageText": "Страница не найдена"
 }
