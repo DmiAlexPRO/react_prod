@@ -1,6 +1,6 @@
 import {FC, useState} from 'react';
 import styles from './Sidebar.module.scss';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from 'shared/lib/classNames';
 import {Button} from 'shared/ui';
 import {ThemeSwitcher} from 'widgets/ThemeSwitcher';
 import {useTranslation} from 'react-i18next';
