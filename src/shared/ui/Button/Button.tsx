@@ -1,6 +1,6 @@
 import {ButtonHTMLAttributes, FC, PropsWithChildren} from 'react';
 import styles from './Button.module.scss';
-import {classNames} from 'shared/lib/classNames';
+import {classNames} from 'shared/lib/classNames/classNames';
 
 export enum ButtonTheme {
     // eslint-disable-next-line no-unused-vars
