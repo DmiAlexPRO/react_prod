@@ -4,7 +4,9 @@ import {classNames} from 'shared/lib/classNames';
 
 export enum ButtonTheme {
     // eslint-disable-next-line no-unused-vars
-    CLEAR = 'clear',
+    PRIMARY = 'primary',
+    // eslint-disable-next-line no-unused-vars
+    NEGATIVE = 'negative'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
@@ -14,7 +16,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
     className,
     children,
-    theme = ButtonTheme.CLEAR,
+    theme = ButtonTheme.PRIMARY,
     ...otherProps
 }) => {
     return (

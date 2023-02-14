@@ -1,7 +1,7 @@
 import {FC, useState} from 'react';
 import styles from './Sidebar.module.scss';
 import {classNames} from 'shared/lib/classNames';
-import {Button} from 'shared/ui';
+import {Button, ButtonTheme} from 'shared/ui';
 import {ThemeSwitcher} from 'widgets/ThemeSwitcher';
 import {useTranslation} from 'react-i18next';
 import {LangSwitcher} from 'widgets/LangSwitcher';
@@ -29,7 +29,12 @@ export const Sidebar: FC<SidebarProps> = ({className}) => {
                 )
             }
         >
-            <Button onClick={onToggle}>{t('toggle-btn')}</Button>
+            <Button
+                onClick={onToggle}
+                theme={ButtonTheme.NEGATIVE}
+            >
+                {t('toggle-btn')}
+            </Button>
             <LangSwitcher />
             <div className={styles.switchers}>
                 <ThemeSwitcher />
