@@ -2,6 +2,8 @@ import HTMLWebpackPlugin from 'html-webpack-plugin';
 import webpack, {ProgressPlugin, WebpackPluginInstance} from 'webpack';
 import {BuildOptions} from './types/config';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
+
 
 export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstance[] {
     return [
@@ -17,5 +19,8 @@ export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstanc
             _IS_DEV: JSON.stringify(isDev),
         }),
         new webpack.HotModuleReplacementPlugin(),
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        }),
     ];
 }
