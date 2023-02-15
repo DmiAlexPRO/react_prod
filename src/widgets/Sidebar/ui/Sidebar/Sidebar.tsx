@@ -11,7 +11,7 @@ interface SidebarProps {
 }
 
 export const Sidebar: FC<SidebarProps> = ({className}) => {
-    const [collapsed, setCollapsed] = useState(true);
+    const [collapsed, setCollapsed] = useState(false);
     const {t} = useTranslation();
 
     const onToggle = () => {
@@ -21,6 +21,7 @@ export const Sidebar: FC<SidebarProps> = ({className}) => {
 
     return (
         <div
+            data-testid="sidebar"
             className={
                 classNames(
                     styles.sidebar,
@@ -30,6 +31,7 @@ export const Sidebar: FC<SidebarProps> = ({className}) => {
             }
         >
             <Button
+                data-testid="sidebar-toggle"
                 onClick={onToggle}
                 theme={ButtonTheme.NEGATIVE}
             >
