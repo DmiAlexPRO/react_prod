@@ -43,10 +43,25 @@
         "require-jsdoc": "off",
         "no-unused-vars": "warn",
 
-        "i18next/no-literal-string": ["error", {"markupOnly": true}]
+        "i18next/no-literal-string": ["error", {
+            "markupOnly": true,
+            "ignoreAttribute": [
+                "data-testid"
+            ]
+        }]
 
     },
     "globals": {
         "_IS_DEV": true
-    }
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/src/**/*.test.{ts, tsx}"
+            ],
+            "rules": {
+                "i18next/no-literal-string": "off"
+            }
+        }
+    ]
 }
