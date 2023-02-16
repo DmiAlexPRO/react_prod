@@ -8,24 +8,24 @@ describe('classNames', () => {
     test('with additional class and mods', () => {
         expect(classNames('someClass', {
             hovered: true,
-            scrollable: true,
+            scrollable: true
         }, [
             'additional-class-1',
-            'additional-class-2',
+            'additional-class-2'
         ])).toBe('someClass additional-class-1 additional-class-2 hovered scrollable');
     });
 
     test('with mods false', () => {
         expect(classNames('someClass', {
             hovered: true,
-            scrollable: false,
+            scrollable: false
         }, [])).toBe('someClass hovered');
     });
 
     test('with mods undefined', () => {
         expect(classNames('someClass', {
             hovered: true,
-            scrollable: undefined,
+            scrollable: undefined
         }, [])).toBe('someClass hovered');
     });
 });

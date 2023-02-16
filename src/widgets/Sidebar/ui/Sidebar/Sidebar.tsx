@@ -26,7 +26,7 @@ export const Sidebar: FC<SidebarProps> = ({className}) => {
                 classNames(
                     styles.sidebar,
                     {[styles.collapsed]: collapsed},
-                    [className],
+                    [className]
                 )
             }
         >

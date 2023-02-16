@@ -11,7 +11,7 @@ export function buildResolvers(options: BuildOptions): ResolveOptions {
         modules: [options.paths.src, 'node_modules'],
         // говорим, в дирректории это будет файл по умолчанию
         mainFiles: ['index'],
-        alias: [],
+        alias: []
 
     };
 }

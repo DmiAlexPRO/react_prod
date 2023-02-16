@@ -16,7 +16,7 @@
         },
         "ecmaVersion": "latest",
         "sourceType": "module",
-        "project": "./tsconfig.json"
+//        "project": "./tsconfig.json"
     },
     "plugins": [
         "react",
@@ -42,11 +42,20 @@
         }],
         "require-jsdoc": "off",
         "no-unused-vars": "warn",
+        "object-curly-spacing": "off",
+        "comma-dangle": ["error", {
+            "arrays": "never",
+            "objects": "never",
+            "imports": "never",
+            "exports": "never",
+            "functions": "never"
+        }],
 
         "i18next/no-literal-string": ["error", {
             "markupOnly": true,
             "ignoreAttribute": [
-                "data-testid"
+                "data-testid",
+                "to"
             ]
         }]
 
