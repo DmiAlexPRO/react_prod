@@ -6,7 +6,9 @@ export enum ButtonTheme {
     // eslint-disable-next-line no-unused-vars
     PRIMARY = 'primary',
     // eslint-disable-next-line no-unused-vars
-    NEGATIVE = 'negative'
+    NEGATIVE = 'negative',
+    // eslint-disable-next-line no-unused-vars
+    OUTLINED = 'outlined'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{

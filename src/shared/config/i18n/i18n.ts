@@ -18,6 +18,12 @@ i18n
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json'
         }
+    })
+    .catch((err) => {
+        if (_IS_DEV) {
+            // eslint-disable-next-line no-console
+            console.log('i18next error: ', err);
+        }
     });
 
 export default i18n;

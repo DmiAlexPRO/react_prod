@@ -1,5 +1,5 @@
 import {RouteProps} from 'react-router-dom';
-import {AppRoutes, RoutePath} from 'shared/config';
+import {AppRoutes, RoutePath} from 'shared/config/routeConfig/routeConfig';
 import {MainPage} from 'pages/MainPage';
 import {AboutPage} from 'pages/AboutPage';
 import {NotFoundPage} from 'pages/NotFoundPage';
