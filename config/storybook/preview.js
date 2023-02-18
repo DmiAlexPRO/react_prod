@@ -3,6 +3,7 @@ import {ThemeDecorator} from '../../src/shared/config/storybook/decorators/Theme
 import {addDecorator} from '@storybook/react';
 import {Theme} from '../../src/app/providers/ThemeProvider';
 import {RouterDecorator} from '../../src/shared/config/storybook/decorators/RouterDecorator';
+import {I18NextDecorator} from '../../src/shared/config/storybook/decorators/I18NextDecorator';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -18,3 +19,4 @@ addDecorator(StyleDecorator);
 // eslint-disable-next-line new-cap
 addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
+addDecorator(I18NextDecorator); // Пока не работает
