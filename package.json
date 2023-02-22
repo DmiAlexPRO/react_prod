@@ -63,6 +63,7 @@
     "jest-environment-jsdom": "^29.4.3",
     "loki": "^0.31.0",
     "mini-css-extract-plugin": "^2.7.2",
+    "reg-cli": "^0.17.7",
     "regenerator-runtime": "^0.13.11",
     "sass": "^1.58.2",
     "sass-loader": "^13.2.0",
