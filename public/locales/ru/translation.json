@@ -1,11 +1,11 @@
 {
   "navbarMenuLinkMain": "Главная",
   "navbarMenuLinkAbout": "О нас",
-  "lang": "Язык",
   "ru": "Русский",
   "en": "Английский",
   "loading": "Loading",
   "notFoundPageText": "Страница не найдена",
   "unexpectedErrorHappened": "Произошла непредвиденная ошибка",
-  "reloadPageButtonText": "Обновить страницу"
+  "reloadPageButtonText": "Обновить страницу",
+  "langShort": "Короткий"
 }
