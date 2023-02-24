@@ -20,7 +20,8 @@
     "plugins": [
         "react",
         "@typescript-eslint",
-        "i18next"
+        "i18next",
+        "react-hooks"
     ],
     "settings": {
         "import/resolver": {
@@ -57,7 +58,9 @@
                 "data-testid",
                 "to"
             ]
-        }]
+        }],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error"
 
     },
     "globals": {
@@ -66,10 +69,11 @@
     "overrides": [
         {
             "files": [
-                "**/src/**/*.test.{ts, tsx}"
+                "**/src/**/*.{test, stories}.{ts, tsx}"
             ],
             "rules": {
-                "i18next/no-literal-string": "off"
+                "i18next/no-literal-string": "off",
+                "max-len": "off"
             }
         }
     ]

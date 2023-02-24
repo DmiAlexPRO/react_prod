@@ -7,5 +7,6 @@
   "notFoundPageText": "Страница не найдена",
   "unexpectedErrorHappened": "Произошла непредвиденная ошибка",
   "reloadPageButtonText": "Обновить страницу",
-  "langShort": "Короткий"
+  "langShort": "Короткий",
+    "navbarSignInBtn": "Войти"
 }
