@@ -26,7 +26,7 @@ PrimaryLight.args = {
 
 export const SecondaryLight = Template.bind({});
 SecondaryLight.args = {
-    theme: AppLinkTheme.SECONDARY
+    theme: AppLinkTheme.INVERTED
 };
 
 export const RedLight = Template.bind({});
@@ -47,7 +47,7 @@ PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const SecondaryDark = Template.bind({});
 SecondaryDark.args = {
-    theme: AppLinkTheme.SECONDARY
+    theme: AppLinkTheme.INVERTED
 };
 SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
