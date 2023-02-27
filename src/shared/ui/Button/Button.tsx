@@ -36,7 +36,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
     className,
     children,
     square,
-    theme,
+    theme = ButtonTheme.CLEAR,
     size = ButtonSize.M,
     disabled = false,
     ...otherProps
