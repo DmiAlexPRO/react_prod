@@ -8,5 +8,7 @@
   "unexpectedErrorHappened": "Произошла непредвиденная ошибка",
   "reloadPageButtonText": "Обновить страницу",
   "langShort": "Короткий",
-    "navbarSignInBtn": "Войти"
+    "navbarSignInBtn": "Войти",
+    "minus": "-",
+  "plus": "+"
 }
