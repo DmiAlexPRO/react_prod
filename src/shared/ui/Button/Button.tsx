@@ -1,4 +1,4 @@
-import {ButtonHTMLAttributes, FC, PropsWithChildren} from 'react';
+import {ButtonHTMLAttributes, FC} from 'react';
 import styles from './Button.module.scss';
 import {classNames} from 'shared/lib/classNames';
 

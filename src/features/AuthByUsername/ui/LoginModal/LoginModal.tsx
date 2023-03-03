@@ -1,5 +1,4 @@
 import {FC} from 'react';
-import styles from './LoginModal.module.scss';
 import {classNames} from 'shared/lib/classNames';
 import {Modal} from 'shared/ui/Modal';
 import {LoginForm} from '../LoginForm/LoginForm';
@@ -19,7 +18,7 @@ export const LoginModal: FC<LoginModalProps> = ({
         <Modal
             isOpen={isOpen}
             onClose={onClose}
-            className={classNames(styles.loginModal, {}, [className])}
+            className={classNames('', {}, [className])}
         >
             <LoginForm />
         </Modal>
