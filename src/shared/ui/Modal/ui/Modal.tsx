@@ -17,6 +17,7 @@ interface ModalProps {
     className?: string;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 const ANIMATION_DELAY = 300;
 
@@ -24,9 +25,11 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
     className,
     children,
     isOpen,
+    lazy = true,
     onClose
 }) => {
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const timeRef = useRef<ReturnType<typeof setTimeout>>( );
     const {theme} = useTheme();
 
@@ -61,6 +64,17 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
         'app_modal'
     ];
 
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+
+        // Удаляем модалку из DOM при закрытии
+        // (будет всегда работать автофокус при открытии,
+        // но будут пропадать заполненные поля формы) TODO: поведение лучше указывать через пропсы
+        return () => setIsMounted(false);
+    }, [isOpen]);
+
 
     useEffect(() => {
         if (isOpen) {
@@ -72,6 +86,10 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>

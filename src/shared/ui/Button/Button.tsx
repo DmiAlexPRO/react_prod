@@ -32,7 +32,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     disabled?: boolean;
 }
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = ({
+export const Button: FC<ButtonProps> = ({
     className,
     children,
     square,

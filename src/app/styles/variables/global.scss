@@ -1,5 +1,5 @@
 :root {
-    --font-family-main: roboto sans-serif;
+    --font-family-main: consolas, "Times New Roman", serif;
 
     --font-size-m: 16px;
     --font-line-m: 24px;
@@ -23,5 +23,6 @@
 
     // Цвета
     --overlay-color: rgba(0 0 0 / 60%);
-
+    --red-light: #ff00;
+    --red-dark: #ce0505;
 }
