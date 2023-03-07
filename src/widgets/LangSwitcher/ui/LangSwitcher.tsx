@@ -14,9 +14,12 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({
 }) => {
     const {t, i18n} = useTranslation();
 
+    const lang = i18n.language === 'ru' ? 'ru' : 'en';
+
     const toggle = () => {
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
     };
+
 
     return (
         <Button
@@ -24,7 +27,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({
             onClick={toggle}
             className={classNames('', {}, [className])}
         >
-            {short ? t(i18n.language).slice(0, 3) : t(i18n.language)}
+            {short ? t(lang).slice(0, 3) : t(lang)}
         </Button>
     );
 };
