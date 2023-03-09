@@ -1,7 +1,8 @@
-import {FC} from 'react';
+import {FC, Suspense} from 'react';
 import {classNames} from 'shared/lib/classNames';
 import {Modal} from 'shared/ui/Modal';
-import {LoginForm} from '../LoginForm/LoginForm';
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
+import {Spinner} from 'shared/ui';
 
 interface LoginModalProps {
     className?: string;
@@ -20,7 +21,9 @@ export const LoginModal: FC<LoginModalProps> = ({
             onClose={onClose}
             className={classNames('', {}, [className])}
         >
-            <LoginForm />
+            <Suspense fallback={<Spinner />}>
+                <LoginFormAsync />
+            </Suspense>
         </Modal>
     );
 };
