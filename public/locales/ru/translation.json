@@ -1,11 +1,20 @@
 {
   "navbarMenuLinkMain": "Главная",
   "navbarMenuLinkAbout": "О нас",
+  "navbarMenuLinkProfile": "Профиль",
   "ru": "Русский",
   "en": "Английский",
-  "loading": "Loading",
+  "loading": "Загрузка",
   "notFoundPageText": "Страница не найдена",
   "unexpectedErrorHappened": "Произошла непредвиденная ошибка",
   "reloadPageButtonText": "Обновить страницу",
-  "langShort": "Короткий"
+  "langShort": "Короткий",
+  "enter": "Войти",
+  "minus": "-",
+  "plus": "+",
+  "password": "Пароль",
+  "username": "Имя пользователя",
+  "authFormTitle": "Авторизация",
+  "authErrorMessage": "Введен неверный логин или пароль",
+  "out": "Выйти"
 }

@@ -25,7 +25,7 @@ DefaultLight.args = {
 export const PrimaryLight = Template.bind({});
 PrimaryLight.args = {
     children: 'Button',
-    theme: ButtonTheme.PRIMARY
+    theme: ButtonTheme.CLEAR
 };
 
 export const OutlinedLight = Template.bind({});
@@ -56,7 +56,7 @@ DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
     children: 'Button',
-    theme: ButtonTheme.PRIMARY
+    theme: ButtonTheme.CLEAR
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 

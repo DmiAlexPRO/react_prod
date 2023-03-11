@@ -1,6 +1,17 @@
 {
   "navbarMenuLinkMain": "Main",
   "navbarMenuLinkAbout": "About",
+  "navbarMenuLinkProfile": "Profile",
   "ru": "Russian",
-  "en": "English"
+  "en": "English",
+  "loading": "Loading",
+  "notFoundPageText": "Page not found",
+  "unexpectedErrorHappened": "An unexpected error has occurred",
+  "reloadPageButtonText": "Reload page",
+  "out": "Log out",
+  "enter": "Log in",
+  "password": "Password",
+  "username": "Username",
+  "authFormTitle": "Authorisation",
+  "authErrorMessage": "Invalid username or password"
 }

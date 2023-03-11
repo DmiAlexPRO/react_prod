@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": "2"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "firstname": "Дмитрий",
+    "lastname": "Прохоров",
+    "age": 23,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "St.Petersburg",
+    "username": "admin",
+    "avatar": "https://miro.medium.com/max/2400/2*lQTga1rvdXCiX7n6VhQZxQ.jpeg"
+  }
+}
