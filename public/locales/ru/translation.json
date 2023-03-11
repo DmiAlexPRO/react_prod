@@ -1,9 +1,10 @@
 {
   "navbarMenuLinkMain": "Главная",
   "navbarMenuLinkAbout": "О нас",
+  "navbarMenuLinkProfile": "Профиль",
   "ru": "Русский",
   "en": "Английский",
-  "loading": "Loading",
+  "loading": "Загрузка",
   "notFoundPageText": "Страница не найдена",
   "unexpectedErrorHappened": "Произошла непредвиденная ошибка",
   "reloadPageButtonText": "Обновить страницу",
@@ -13,7 +14,7 @@
   "plus": "+",
   "password": "Пароль",
   "username": "Имя пользователя",
-  "authFormTitle": "Форма авторизации",
+  "authFormTitle": "Авторизация",
   "authErrorMessage": "Введен неверный логин или пароль",
   "out": "Выйти"
 }

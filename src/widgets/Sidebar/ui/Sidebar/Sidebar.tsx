@@ -1,29 +1,23 @@
-import {FC, useState} from 'react';
+import {FC, memo, useState} from 'react';
 import styles from './Sidebar.module.scss';
 import {classNames} from 'shared/lib/classNames';
-import {AppLink, Button, ButtonTheme} from 'shared/ui';
+import {Button, ButtonTheme} from 'shared/ui';
 import {ThemeSwitcher} from 'widgets/ThemeSwitcher';
-import {useTranslation} from 'react-i18next';
 import {LangSwitcher} from 'widgets/LangSwitcher';
 import {ButtonSize} from 'shared/ui/Button/Button';
-import {AppLinkTheme} from 'shared/ui/AppLink/AppLink';
-import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 
-import MainIcon from 'shared/assets/icons/home-page-menu-icon.svg';
-import AboutIcon from 'shared/assets/icons/about-page-menu-icon.svg';
+import {SidebarItemsList} from '../../model/item';
+import {SidebarItem} from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
     className?: string
 }
 
-export const Sidebar: FC<SidebarProps> = ({className}) => {
+export const Sidebar: FC<SidebarProps> = memo(({className}:SidebarProps ) => {
     const [collapsed, setCollapsed] = useState(false);
-    const {t} = useTranslation();
-
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
-
 
     return (
         <div
@@ -48,26 +42,13 @@ export const Sidebar: FC<SidebarProps> = ({className}) => {
             </Button>
 
             <div className={styles.items}>
-                <AppLink
-                    theme={AppLinkTheme.INVERTED}
-                    to={RoutePath.main}
-                    className={styles.item}
-                >
-                    <MainIcon className={styles.icon} />
-                    <span className={styles.link}>
-                        {t('navbarMenuLinkMain')}
-                    </span>
-                </AppLink>
-                <AppLink
-                    theme={AppLinkTheme.INVERTED}
-                    to={RoutePath.about}
-                    className={styles.item}
-                >
-                    <AboutIcon className={styles.icon} />
-                    <span className={styles.link}>
-                        {t('navbarMenuLinkAbout')}
-                    </span>
-                </AppLink>
+                {SidebarItemsList.map((item) => (
+                    <SidebarItem
+                        collapsed={collapsed}
+                        item={item}
+                        key={item.path}
+                    />
+                ))}
             </div>
 
             <div className={styles.switchers}>
@@ -77,4 +58,4 @@ export const Sidebar: FC<SidebarProps> = ({className}) => {
 
         </div>
     );
-};
+});

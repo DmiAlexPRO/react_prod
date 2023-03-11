@@ -1,4 +1,4 @@
-import {ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState} from 'react';
+import {ChangeEvent, FC, InputHTMLAttributes, memo, useEffect, useRef, useState} from 'react';
 import styles from './Input.module.scss';
 import {classNames} from 'shared/lib/classNames';
 
@@ -11,7 +11,7 @@ interface InputProps extends HTMLInputProps{
     autofocus?: boolean;
 }
 
-export const Input = memo(({
+export const Input: FC<InputProps> = memo(({
     className,
     onChange,
     value,

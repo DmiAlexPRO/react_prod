@@ -15,17 +15,18 @@ import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
 import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 export interface LoginFormProps {
-    className?: string
+    className?: string;
+    onSuccess: () => void;
 }
 
 const initialReducers: ReducerList = {
     loginForm: loginReducer
 };
 
-const LoginForm = memo(({className}: LoginFormProps) => {
+
+const LoginForm = memo<LoginFormProps>(({className, onSuccess}: LoginFormProps) => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
-
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginIsLoading);
@@ -39,9 +40,12 @@ const LoginForm = memo(({className}: LoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const loginClickHandler = useCallback(() => {
-        dispatch(loginByUsername({username, password}));
-    }, [dispatch, password, username]);
+    const loginClickHandler = useCallback(async () => {
+        const result = await dispatch(loginByUsername({username, password}));
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess();
+        }
+    }, [dispatch, onSuccess, password, username]);
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>

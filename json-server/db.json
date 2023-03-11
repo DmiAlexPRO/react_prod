@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Дмитрий",
+    "lastname": "Прохоров",
+    "age": 23,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "St.Petersburg",
+    "username": "admin",
+    "avatar": "https://miro.medium.com/max/2400/2*lQTga1rvdXCiX7n6VhQZxQ.jpeg"
+  }
 }

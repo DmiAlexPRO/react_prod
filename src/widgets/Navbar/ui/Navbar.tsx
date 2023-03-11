@@ -1,4 +1,4 @@
-import {FC, useCallback, useState} from 'react';
+import {FC, memo, useCallback, useState} from 'react';
 import styles from './Navbar.module.scss';
 import {classNames} from 'shared/lib/classNames';
 import {useTranslation} from 'react-i18next';
@@ -12,7 +12,7 @@ interface NavbarProps {
     className?: string,
 }
 
-export const Navbar: FC<NavbarProps> = ({className}) => {
+export const Navbar: FC<NavbarProps> = memo(({className}: NavbarProps) => {
     const {t} = useTranslation();
     const [isAuthModalShow, setIsAuthModalShow] = useState(false);
     const authData = useSelector(getUserAuthData);
@@ -56,4 +56,4 @@ export const Navbar: FC<NavbarProps> = ({className}) => {
             <LoginModal isOpen={isAuthModalShow} onClose={onCloseModal} />
         </div>
     );
-};
+});
