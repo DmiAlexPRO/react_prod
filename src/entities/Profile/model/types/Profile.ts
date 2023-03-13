@@ -2,7 +2,7 @@ import {Currency} from 'shared/types/Currency';
 import {Country} from 'shared/types/Country';
 
 export interface Profile {
-    first: string;
+    firstname: string;
     lastname: string;
     age: 22,
     currency: Currency,

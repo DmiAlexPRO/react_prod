@@ -1,4 +1,9 @@
-import {configureStore, ReducersMapObject} from '@reduxjs/toolkit';
+import {
+    CombinedState,
+    configureStore,
+    Reducer,
+    ReducersMapObject
+} from '@reduxjs/toolkit';
 import {StateScheme} from './StateScheme';
 import {counterReducer} from 'entities/Counter';
 import {userReducer} from 'entities/User';
@@ -21,7 +26,7 @@ export function createReduxStore(
     const reducerManager = createReducerManager(rootReducers);
 
     const store = configureStore({
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateScheme>>,
         devTools: _IS_DEV,
         preloadedState: initialState,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({

@@ -1,6 +1,6 @@
 import {ButtonHTMLAttributes, FC, memo} from 'react';
 import styles from './Button.module.scss';
-import {classNames} from 'shared/lib/classNames';
+import {classNames, Mods} from 'shared/lib/classNames';
 
 export enum ButtonTheme {
     // eslint-disable-next-line no-unused-vars
@@ -36,12 +36,12 @@ export const Button: FC<ButtonProps> = memo(({
     className,
     children,
     square,
-    theme = ButtonTheme.CLEAR,
+    theme = ButtonTheme.OUTLINED,
     size = ButtonSize.M,
     disabled = false,
     ...otherProps
 }: ButtonProps) => {
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [styles.square]: square,
         [styles.disabled]: disabled
     };

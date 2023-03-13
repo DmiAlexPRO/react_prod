@@ -6,8 +6,8 @@ import {Spinner} from 'shared/ui';
 
 interface LoginModalProps {
     className?: string;
-    isOpen?: boolean;
-    onClose?: () => void;
+    isOpen: boolean;
+    onClose: () => void;
 }
 
 export const LoginModal: FC<LoginModalProps> = ({

@@ -11,7 +11,7 @@ i18n
     .init({
         fallbackLng: 'ru',
         debug: _IS_DEV,
-
+        returnNull: false,
         interpolation: {
             escapeValue: false // not needed for react as it escapes by default
         },
@@ -19,7 +19,7 @@ i18n
             loadPath: '/locales/{{lng}}/{{ns}}.json'
         }
     })
-    .catch((err) => {
+    .catch((err: any) => {
         if (_IS_DEV) {
             // eslint-disable-next-line no-console
             console.log('i18next error: ', err);
