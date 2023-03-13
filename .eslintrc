@@ -65,7 +65,8 @@
         "react/display-name": "off"
     },
     "globals": {
-        "_IS_DEV": true
+        "_IS_DEV": true,
+        "_API": true
     },
     "overrides": [
         {

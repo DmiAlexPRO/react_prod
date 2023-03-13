@@ -28,7 +28,8 @@ export default ({ config }: {config: webpack.Configuration}) => {
     });
     config.module.rules.push(buildCssLoader(true));
     config.plugins.push(new DefinePlugin({
-        _IS_DEV: true
+        _IS_DEV: JSON.stringify(true),
+        _API: JSON.stringify('')
     }));
 
 
