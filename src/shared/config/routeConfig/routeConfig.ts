@@ -1,11 +1,7 @@
 export enum AppRoutes {
-    // eslint-disable-next-line no-unused-vars
     MAIN= 'main',
-    // eslint-disable-next-line no-unused-vars
     ABOUT = 'about',
-    // eslint-disable-next-line no-unused-vars
     PROFILE = 'profile',
-    // eslint-disable-next-line no-unused-vars
     NOT_FOUND = 'not_found'
 }
 

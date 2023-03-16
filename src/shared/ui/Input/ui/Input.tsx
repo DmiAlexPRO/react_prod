@@ -1,14 +1,15 @@
 import {ChangeEvent, FC, InputHTMLAttributes, memo, useEffect, useRef, useState} from 'react';
 import styles from './Input.module.scss';
-import {classNames} from 'shared/lib/classNames';
+import {classNames, Mods} from 'shared/lib/classNames';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps{
     className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
     autofocus?: boolean;
+    readOnly?: boolean;
 }
 
 export const Input: FC<InputProps> = memo(({
@@ -18,6 +19,7 @@ export const Input: FC<InputProps> = memo(({
     type = 'text',
     placeholder,
     autofocus,
+    readOnly = false,
     ...otherProps
 }: InputProps) => {
     const [isFocused, setIsFocused] = useState(false);
@@ -29,15 +31,15 @@ export const Input: FC<InputProps> = memo(({
         setCarriagePosition(e.target.value.length);
     };
 
-    const onBlur = () => {
+    const onBlurHandler = () => {
         setIsFocused(false);
     };
 
-    const onFocus = () => {
-        setIsFocused(true);
+    const onFocusHandler = () => {
+        setIsFocused(!readOnly); // фокус доступен только при выключенном readonly
     };
 
-    const onSelect = (e: any) => {
+    const onSelectHandler = (e: any) => {
         setCarriagePosition(e?.target?.selectionStart || 0);
     };
 
@@ -48,8 +50,12 @@ export const Input: FC<InputProps> = memo(({
         }
     }, [autofocus]);
 
+    const mods: Mods = {
+        [styles.readOnly]: readOnly
+    };
+
     return (
-        <div className={classNames(styles.inputWrapper, {}, [className])}>
+        <div className={classNames(styles.inputWrapper, mods, [className])}>
             {placeholder && (
                 <div className={styles.placeholder}>
                     {`${placeholder}>`}
@@ -62,9 +68,10 @@ export const Input: FC<InputProps> = memo(({
                     value={value}
                     onChange={onChangeHandler}
                     className={styles.input}
-                    onFocus={onFocus}
-                    onBlur={onBlur}
-                    onSelect={onSelect}
+                    onFocus={onFocusHandler}
+                    onBlur={onBlurHandler}
+                    onSelect={onSelectHandler}
+                    readOnly={readOnly}
                     {...otherProps}
                 />
                 {isFocused && (

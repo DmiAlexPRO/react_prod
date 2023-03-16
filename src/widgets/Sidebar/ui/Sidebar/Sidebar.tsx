@@ -47,6 +47,7 @@ export const Sidebar: FC<SidebarProps> = memo(({className}:SidebarProps ) => {
                         collapsed={collapsed}
                         item={item}
                         key={item.path}
+
                     />
                 ))}
             </div>

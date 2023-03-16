@@ -1,5 +1,12 @@
 {
     "title": "Профиль",
     "yourName": "Ваше имя",
-    "yourLastname": "Ваша фамилия"
+    "yourLastname": "Ваша фамилия",
+    "yourAge": "Ваш возраст",
+    "yourCity": "Ваш город",
+    "yourUsername": "Ваш никнейм",
+    "yourAvatar": "Ваш аватар",
+    "yourCurrency": "Ваша валюта",
+    "yourCountry": "Ваша страна",
+    "profileLoadingError": "Ошибка при загрузке профиля"
 }

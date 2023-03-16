@@ -5,11 +5,8 @@ import {Link, LinkProps} from 'react-router-dom';
 
 
 export enum AppLinkTheme {
-    // eslint-disable-next-line no-unused-vars
     PRIMARY = 'primary',
-    // eslint-disable-next-line no-unused-vars
     INVERTED = 'inverted',
-    // eslint-disable-next-line no-unused-vars
     RED = 'red'
 }
 
