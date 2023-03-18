@@ -8,5 +8,11 @@
     "yourAvatar": "Ваш аватар",
     "yourCurrency": "Ваша валюта",
     "yourCountry": "Ваша страна",
-    "profileLoadingError": "Ошибка при загрузке профиля"
+    "profileLoadingError": "Ошибка при загрузке профиля",
+    "incorrectUserDataMsg": "Некорректные данные пользователя",
+    "incorrectAgeMsg": "Некорректный возраст",
+    "incorrectCountryMsg": "Некорректная страна",
+    "noDataMsg": "Нет данных",
+    "serverError": "Ошибка сервера"
+
 }

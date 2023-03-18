@@ -67,7 +67,8 @@
     },
     "globals": {
         "_IS_DEV": true,
-        "_API": true
+        "_API": true,
+        "_PROJECT": true
     },
     "overrides": [
         {

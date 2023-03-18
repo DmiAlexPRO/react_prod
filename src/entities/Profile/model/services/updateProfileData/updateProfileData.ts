@@ -1,15 +1,10 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {ThunkConfig} from 'app/providers/StoreProvider';
-import {ErrorType} from 'shared/types/ErrorType';
-import {Profile} from '../../types/Profile';
-import {getProfileForm} from 'entities/Profile';
+import {Profile, ValidateProfileError} from '../../types/Profile';
+import {getProfileForm} from '../../selectors/getProfileForm/getProfileForm';
+import {validateProfileData} from '../validateProfileData/validateProfileData';
 
-interface FetchProfileDataProps {
-    username: string;
-    password: string;
-}
-
-export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
+export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<ValidateProfileError[]>>(
     'profile/fetchProfileData',
     async (_, {
         rejectWithValue,
@@ -18,15 +13,21 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<str
     }) => {
         const formData = getProfileForm(getState());
 
+        const errors = validateProfileData(formData);
+
+        if (errors.length) {
+            return rejectWithValue(errors);
+        }
         try {
             const response = await extra.api.put<Profile>('/profile', formData);
 
+            if (!response.data) {
+                throw new Error();
+            }
+
             return response.data;
         } catch (e) {
-            if (_IS_DEV) {
-                console.log(e); // TEMP
-            }
-            return rejectWithValue(ErrorType.AUTH_ERROR);
+            return rejectWithValue([ValidateProfileError.SERVER_ERROR]);
         }
     }
 );
