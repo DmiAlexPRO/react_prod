@@ -15,6 +15,14 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         ]
     };
 
+    const assetModules = {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+            filename: isDev ? '[path][name].[ext]' : '[contenthash].[ext]'
+        }
+    };
+
     const babelLoader = buildBabelLoader(options);
 
     const svgLoader = {
@@ -32,7 +40,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const cssLoader = buildCssLoader(isDev);
 
     return [
-        fileLoader,
+        assetModules,
         svgLoader,
         babelLoader,
         typescriptLoader,

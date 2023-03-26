@@ -6,7 +6,7 @@ import {Button, ButtonTheme} from 'shared/ui';
 import {LoginModal} from 'features/AuthByUsername';
 import {useSelector} from 'react-redux';
 import {getUserAuthData, userActions} from 'entities/User';
-import {useAppDispatch as useDispatch} from 'shared/hooks/useAppDispatch/useAppDispatch';
+import {useAppDispatch} from 'shared/hooks/useAppDispatch/useAppDispatch';
 
 interface NavbarProps {
     className?: string,
@@ -16,7 +16,7 @@ export const Navbar: FC<NavbarProps> = memo(({className}: NavbarProps) => {
     const {t} = useTranslation();
     const [isAuthModalShow, setIsAuthModalShow] = useState(false);
     const authData = useSelector(getUserAuthData);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const onCloseModal = useCallback(() => {
         setIsAuthModalShow(false);

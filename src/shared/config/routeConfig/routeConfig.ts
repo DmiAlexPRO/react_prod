@@ -1,3 +1,5 @@
+import {RouteProps} from 'react-router-dom';
+
 export enum AppRoutes {
     MAIN= 'main',
     ABOUT = 'about',
@@ -11,3 +13,7 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.PROFILE]: '/profile',
     [AppRoutes.NOT_FOUND]: '*' // будет отрабатывать, елси все остальные варианты не подошли
 };
+
+export type AppRoutesProps = RouteProps & {
+    authOnly?: boolean;
+}

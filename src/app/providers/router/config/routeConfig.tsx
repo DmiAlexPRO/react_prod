@@ -1,13 +1,13 @@
-import {RouteProps} from 'react-router-dom';
-import {AppRoutes, RoutePath} from 'shared/config/routeConfig/routeConfig';
+import {
+    AppRoutes,
+    AppRoutesProps,
+    RoutePath
+} from 'shared/config/routeConfig/routeConfig';
 import {MainPage} from 'pages/MainPage';
 import {AboutPage} from 'pages/AboutPage';
 import {NotFoundPage} from 'pages/NotFoundPage';
 import {ProfilePage} from 'pages/ProfilePage';
 
-type AppRoutesProps = RouteProps & {
-    authOnly?: boolean;
-}
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
         path: RoutePath.main,
