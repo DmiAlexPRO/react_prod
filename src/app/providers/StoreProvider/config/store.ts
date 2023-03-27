@@ -7,7 +7,7 @@ import {
 import {StateScheme} from './StateScheme';
 import {counterReducer} from 'entities/Counter';
 import {userReducer} from 'entities/User';
-import {createReducerManager} from 'app/providers/StoreProvider/config/reducerManager';
+import {createReducerManager} from './reducerManager';
 import {$api} from 'shared/api/api';
 import {To} from '@remix-run/router';
 import {NavigateOptions} from 'react-router';
@@ -25,20 +25,21 @@ export function createReduxStore(
 
     const reducerManager = createReducerManager(rootReducers);
 
+    const extraArgument = {
+        api: $api,
+        navigate
+    };
+
     const store = configureStore({
         reducer: reducerManager.reduce as Reducer<CombinedState<StateScheme>>,
         devTools: _IS_DEV,
         preloadedState: initialState,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({
             thunk: {
-                extraArgument: {
-                    api: $api,
-                    navigate
-                }
+                extraArgument
             }
         })
     });
-
 
     // @ts-ignore
     store.reducerManager = reducerManager;

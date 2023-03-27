@@ -1,6 +1,6 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {FC, memo, useCallback, useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import {Text, TextAlign, TextSize} from 'shared/ui/Text/Text';
@@ -28,7 +28,7 @@ interface ArticleDetailsProps {
     id: string;
 }
 
-const reducers: ReducerList = {
+const reducers: ReducersList = {
     articleDetails: articleDetailsReducer
 };
 

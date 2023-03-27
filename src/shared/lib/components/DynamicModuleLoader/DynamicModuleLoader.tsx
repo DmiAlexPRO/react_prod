@@ -5,14 +5,14 @@ import {ReduxStoreWithManager} from 'app/providers/StoreProvider';
 import {StateSchemeKey} from 'app/providers/StoreProvider/config/StateScheme';
 import {Reducer} from '@reduxjs/toolkit';
 
-export type ReducerList = {
+export type ReducersList = {
     [name in StateSchemeKey]?: Reducer;
 }
 
 type ReducersListEntry = [StateSchemeKey, Reducer];
 
 interface DynamicModuleLoaderProps {
-    reducers: ReducerList;
+    reducers: ReducersList;
     removeAfterUnmount?: boolean;
 }
 

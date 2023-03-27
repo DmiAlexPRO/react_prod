@@ -1,6 +1,6 @@
 import {FC, useCallback, useEffect} from 'react';
 import {classNames} from 'shared/lib/classNames';
-import {DynamicModuleLoader, ReducerList}
+import {DynamicModuleLoader, ReducersList}
     from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
     fetchProfileData,
@@ -26,7 +26,7 @@ interface ProfilePageProps {
     className?: string
 }
 
-const reducers: ReducerList = {
+const reducers: ReducersList = {
     profile: profileReducer
 };
 

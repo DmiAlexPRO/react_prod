@@ -1,4 +1,3 @@
-import React from 'react';
 import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 import MainIcon from 'shared/assets/icons/home-page-menu-icon.svg';
 import AboutIcon from 'shared/assets/icons/about-page-menu-icon.svg';

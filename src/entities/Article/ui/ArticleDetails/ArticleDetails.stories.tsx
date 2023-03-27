@@ -1,4 +1,3 @@
-import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {StoreDecorator} from 'shared/config/storybook/decorators/StoreDecorator';
 import {Article} from 'entities/Article';

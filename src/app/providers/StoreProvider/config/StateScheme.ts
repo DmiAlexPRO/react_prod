@@ -14,6 +14,7 @@ import {AxiosInstance} from 'axios';
 import {To} from '@remix-run/router';
 import {NavigateOptions} from 'react-router';
 import {ArticleDetailsScheme} from 'entities/Article';
+import {ArticleDetailsCommentsScheme} from 'pages/ArticleDetailsPage';
 
 export interface StateScheme {
     counter: CounterScheme;
@@ -23,6 +24,7 @@ export interface StateScheme {
     loginForm?: LoginScheme;
     profile?: ProfileScheme;
     articleDetails?: ArticleDetailsScheme;
+    articleDetailsComments?: ArticleDetailsCommentsScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme;
