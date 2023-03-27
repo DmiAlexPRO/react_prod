@@ -13,12 +13,18 @@ export enum TextAlign {
     CENTER = 'center'
 }
 
+export enum TextSize {
+    M = 'size_m',
+    L = 'size_l',
+}
+
 interface TextProps {
     className?: string;
     title?: string;
     text?: string;
     theme?: TextTheme;
     align?: TextAlign;
+    size?: TextSize;
 }
 
 export const Text: FC<TextProps> = memo(({
@@ -26,12 +32,14 @@ export const Text: FC<TextProps> = memo(({
     title,
     text,
     theme = TextTheme.PRIMARY,
-    align = TextAlign.LEFT
+    align = TextAlign.LEFT,
+    size = TextSize.M
 }: TextProps) => {
     const additional = [
         className,
         styles[theme],
-        styles[align]
+        styles[align],
+        styles[size]
     ];
     return (
         <div className={classNames('', {}, additional)}>

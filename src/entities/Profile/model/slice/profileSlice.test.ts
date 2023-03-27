@@ -5,8 +5,8 @@ import {
     updateProfileData,
     ValidateProfileError
 } from 'entities/Profile';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import {Country} from 'entities/Country';
+import {Currency} from 'entities/Currency';
 
 const data = {
     username: 'admin',
@@ -20,15 +20,15 @@ const data = {
 
 describe('profileSlice.test', () => {
     test('test set readonly', () => {
-        const state: DeepPartial<ProfileScheme> = { readonly: false };
+        const state: DeepPartial<ProfileScheme> = {readonly: false};
         expect(profileReducer(
             state as ProfileScheme,
             profileActions.setReadonly(true)
-        )).toEqual({ readonly: true });
+        )).toEqual({readonly: true});
     });
 
     test('test cancel edit', () => {
-        const state: DeepPartial<ProfileScheme> = { data, form: { username: '' } };
+        const state: DeepPartial<ProfileScheme> = {data, form: {username: ''}};
 
         expect(profileReducer(
             state as ProfileScheme,
@@ -42,7 +42,7 @@ describe('profileSlice.test', () => {
     });
 
     test('test update profile', () => {
-        const state: DeepPartial<ProfileScheme> = { form: { username: '123' } };
+        const state: DeepPartial<ProfileScheme> = {form: {username: '123'}};
 
         expect(profileReducer(
             state as ProfileScheme,
@@ -50,7 +50,7 @@ describe('profileSlice.test', () => {
                 username: '123456'
             })
         )).toEqual({
-            form: { username: '123456' }
+            form: {username: '123456'}
         });
     });
 

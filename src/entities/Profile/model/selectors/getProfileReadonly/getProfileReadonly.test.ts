@@ -1,5 +1,5 @@
-import { StateScheme } from 'app/providers/StoreProvider';
-import { getProfileReadonly } from './getProfileReadonly';
+import {StateScheme} from 'app/providers/StoreProvider';
+import {getProfileReadonly} from './getProfileReadonly';
 
 describe('getProfileReadonly.test', () => {
     test('should work with filled state', () => {

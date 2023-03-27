@@ -7,7 +7,7 @@ export default {
     title: 'widgets/PageError',
     component: PageError,
     argTypes: {
-        backgroundColor: { control: 'color' }
+        backgroundColor: {control: 'color'}
     }
 } as ComponentMeta<typeof PageError>;
 

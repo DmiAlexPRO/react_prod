@@ -8,7 +8,7 @@ export default {
     component: LoginForm,
 
     argTypes: {
-        backgroundColor: { control: 'color' }
+        backgroundColor: {control: 'color'}
     }
 } as ComponentMeta<typeof LoginForm>;
 

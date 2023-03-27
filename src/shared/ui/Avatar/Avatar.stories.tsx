@@ -7,7 +7,7 @@ export default {
     title: 'shared/Avatar',
     component: Avatar,
     argTypes: {
-        backgroundColor: { control: 'color' }
+        backgroundColor: {control: 'color'}
     }
 } as ComponentMeta<typeof Avatar>;
 

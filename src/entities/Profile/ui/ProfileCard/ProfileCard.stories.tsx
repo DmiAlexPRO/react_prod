@@ -9,7 +9,7 @@ export default {
     title: 'entities/ProfileCard',
     component: ProfileCard,
     argTypes: {
-        backgroundColor: { control: 'color' }
+        backgroundColor: {control: 'color'}
     }
 } as ComponentMeta<typeof ProfileCard>;
 

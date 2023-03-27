@@ -1,4 +1,6 @@
 {
-    "pageTempTitle": "ArticleDetails",
-    "articlePageTempTitle": "Article page"
+    "pageTempTitle": "Делати статьи",
+    "articlePageTempTitle": "Статьи",
+    "articleNotFound": "Статья не найдена",
+    "articleLoadingErrorHappened": "Произошла ошибка при загрузке статьи."
 }
