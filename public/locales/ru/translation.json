@@ -22,5 +22,7 @@
   "cancel": "Отмена",
   "save": "Сохранить",
     "navbarMenuLinkArticles": "Статьи",
-    "hasNoComments": "Комментарии отсутствуют"
+    "hasNoComments": "Комментарии отсутствуют",
+  "send": "Отправить",
+  "addCommentFormInputPlaceholder": "Введите текст комментария"
 }

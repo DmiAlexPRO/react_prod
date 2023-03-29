@@ -15,6 +15,7 @@ import {To} from '@remix-run/router';
 import {NavigateOptions} from 'react-router';
 import {ArticleDetailsScheme} from 'entities/Article';
 import {ArticleDetailsCommentsScheme} from 'pages/ArticleDetailsPage';
+import {AddCommentFormScheme} from 'features/addCommentForm';
 
 export interface StateScheme {
     counter: CounterScheme;
@@ -25,6 +26,7 @@ export interface StateScheme {
     profile?: ProfileScheme;
     articleDetails?: ArticleDetailsScheme;
     articleDetailsComments?: ArticleDetailsCommentsScheme;
+    addCommentForm?: AddCommentFormScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme;
