@@ -15,14 +15,18 @@ export default {
 const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
 
 const article: Article = {
-    id: '1',
-    title: 'Javascript news',
-    subtitle: 'Что нового в JS за 2022 год?',
-    img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
-    views: 1022,
-    createdAt: '26.02.2022',
-    type: [ArticleType.IT],
-    blocks: [
+    'id': '1',
+    'title': 'Javascript news',
+    'subtitle': 'Что нового в JS за 2022 год?',
+    'img': 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+    'views': 1022,
+    'createdAt': '26.02.2022',
+    'user': {
+        id: '1',
+        username: 'Uran Petrovich'
+    },
+    'type': [ArticleType.IT],
+    'blocks': [
         {
             id: '1',
             type: ArticleBlockType.TEXT,

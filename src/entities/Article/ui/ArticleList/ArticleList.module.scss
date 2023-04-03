@@ -1,0 +1,15 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: -30px;
+
+    .card {
+        margin: 0 30px 30px 0;
+    }
+}
+
+.rows {
+    .card {
+        margin: 0 0 30px;
+    }
+}

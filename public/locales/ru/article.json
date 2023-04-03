@@ -3,5 +3,7 @@
     "articlePageTempTitle": "Статьи",
     "articleNotFound": "Статья не найдена",
     "articleLoadingErrorHappened": "Произошла ошибка при загрузке статьи.",
-    "comments": "Комментарии"
+    "comments": "Комментарии",
+    "readMode": "Читать далее...",
+    "backToListBtn": "Назад к списку"
 }
