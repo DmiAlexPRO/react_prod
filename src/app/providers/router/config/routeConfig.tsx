@@ -1,12 +1,16 @@
-import {RouteProps} from 'react-router-dom';
-import {AppRoutes, RoutePath} from 'shared/config/routeConfig/routeConfig';
+import {
+    AppRoutes,
+    AppRoutesProps,
+    RoutePath
+} from 'shared/config/routeConfig/routeConfig';
 import {MainPage} from 'pages/MainPage';
 import {AboutPage} from 'pages/AboutPage';
 import {NotFoundPage} from 'pages/NotFoundPage';
 import {ProfilePage} from 'pages/ProfilePage';
+import {ArticlesPage} from 'pages/ArticlesPage';
+import {ArticleDetailsPage} from 'pages/ArticleDetailsPage';
 
-
-export const routeConfig: Record<AppRoutes, RouteProps> = {
+export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
         path: RoutePath.main,
         element: <MainPage />
@@ -16,8 +20,19 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
         element: <AboutPage />
     },
     [AppRoutes.PROFILE]: {
-        path: RoutePath.profile,
-        element: <ProfilePage />
+        path: `${RoutePath.profile}:id`,
+        element: <ProfilePage />,
+        authOnly: true
+    },
+    [AppRoutes.ARTICLES]: {
+        path: RoutePath.articles,
+        element: <ArticlesPage />,
+        authOnly: true
+    },
+    [AppRoutes.ARTICLE_DETAILS]: {
+        path: `${RoutePath.article_details}:id`,
+        element: <ArticleDetailsPage />,
+        authOnly: true
     },
     [AppRoutes.NOT_FOUND]: {
         path: RoutePath.not_found,

@@ -1,8 +1,21 @@
 import {CounterScheme} from 'entities/Counter';
 import {UserScheme} from 'entities/User';
 import {LoginScheme} from 'features/AuthByUsername';
-import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
+import {
+    AnyAction,
+    CombinedState,
+    Dispatch,
+    EnhancedStore,
+    Reducer,
+    ReducersMapObject
+} from '@reduxjs/toolkit';
 import {ProfileScheme} from 'entities/Profile';
+import {AxiosInstance} from 'axios';
+import {To} from '@remix-run/router';
+import {NavigateOptions} from 'react-router';
+import {ArticleDetailsScheme} from 'entities/Article';
+import {ArticleDetailsCommentsScheme} from 'pages/ArticleDetailsPage';
+import {AddCommentFormScheme} from 'features/addCommentForm';
 
 export interface StateScheme {
     counter: CounterScheme;
@@ -11,6 +24,9 @@ export interface StateScheme {
     // Асинхронные редюсеры
     loginForm?: LoginScheme;
     profile?: ProfileScheme;
+    articleDetails?: ArticleDetailsScheme;
+    articleDetailsComments?: ArticleDetailsCommentsScheme;
+    addCommentForm?: AddCommentFormScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme;
@@ -24,4 +40,16 @@ export interface ReducerManager {
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateScheme> {
     reducerManager: ReducerManager;
+}
+
+export interface ThunkExtraArg {
+    api: AxiosInstance;
+    navigate?: (to: To, options?: NavigateOptions) => void;
+}
+
+export interface ThunkConfig<T> {
+    rejectValue: T;
+    extra: ThunkExtraArg;
+    dispatch?: Dispatch;
+    state: StateScheme;
 }

@@ -5,3 +5,5 @@ export {Input} from './Input/index';
 export {Modal} from './Modal';
 export {Spinner} from './Spinner';
 export {Portal} from './Portal/Portal';
+export {Avatar} from './Avatar/Avatar';
+export {Select} from './Select/Select';

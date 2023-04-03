@@ -16,5 +16,13 @@
   "username": "Имя пользователя",
   "authFormTitle": "Авторизация",
   "authErrorMessage": "Введен неверный логин или пароль",
-  "out": "Выйти"
+  "out": "Выйти",
+  "edit": "Редактировать",
+  "reloadPageText": "Обновите страницу",
+  "cancel": "Отмена",
+  "save": "Сохранить",
+    "navbarMenuLinkArticles": "Статьи",
+    "hasNoComments": "Комментарии отсутствуют",
+  "send": "Отправить",
+  "addCommentFormInputPlaceholder": "Введите текст комментария"
 }

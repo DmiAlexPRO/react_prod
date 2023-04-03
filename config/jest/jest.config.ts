@@ -2,7 +2,9 @@ import path from 'path';
 
 export default {
     globals: {
-        _IS_DEV: true
+        _IS_DEV: true,
+        _API: '',
+        _PROJECT: 'jest'
     },
     clearMocks: true,
     testEnvironment: 'jsdom',

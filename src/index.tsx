@@ -7,14 +7,14 @@ import 'app/styles/index.scss';
 import './shared/config/i18n/i18n';
 import {StoreProvider} from 'app/providers/StoreProvider';
 
-createRoot(document.getElementById('root')).render(
-    <StoreProvider>
-        <BrowserRouter>
+createRoot(document.getElementById('root') as Element).render(
+    <BrowserRouter>
+        <StoreProvider>
             <ErrorBoundary>
                 <ThemeProvider>
                     <App />
                 </ThemeProvider>
             </ErrorBoundary>
-        </BrowserRouter>
-    </StoreProvider>
+        </StoreProvider>
+    </BrowserRouter>
 );

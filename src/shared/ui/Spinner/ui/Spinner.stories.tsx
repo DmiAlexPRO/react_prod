@@ -7,7 +7,7 @@ export default {
     title: 'shared/Spinner',
     component: Spinner,
     argTypes: {
-        backgroundColor: { control: 'color' }
+        backgroundColor: {control: 'color'}
     }
 } as ComponentMeta<typeof Spinner>;
 

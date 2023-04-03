@@ -5,10 +5,10 @@ import {
     useEffect,
     useRef,
     useState,
-    useCallback
+    useCallback, MutableRefObject
 } from 'react';
 import styles from './Modal.module.scss';
-import {classNames} from 'shared/lib/classNames';
+import {classNames, Mods} from 'shared/lib/classNames';
 import {useTheme} from 'app/providers/ThemeProvider';
 import {KeyboardEvent} from 'shared/types/KeyboardEvent';
 import {Portal} from 'shared/ui/Portal';
@@ -30,7 +30,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
 }) => {
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const timeRef = useRef<ReturnType<typeof setTimeout>>( );
+    const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
     const {theme} = useTheme();
 
     const closeHandler = useCallback(() => {
@@ -53,7 +53,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
         e.stopPropagation();
     };
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [styles.opened]: isOpen,
         [styles.isClosing]: isClosing
     };

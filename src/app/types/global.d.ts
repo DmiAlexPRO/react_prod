@@ -15,5 +15,11 @@ declare module '*.svg' {
     export default SVG;
 }
 
-// eslint-disable-next-line no-unused-vars
 declare const _IS_DEV: boolean;
+declare const _API: string;
+declare const _PROJECT: 'storybook' | 'frontend' | 'jest';
+
+type DeepPartial<T> = T extends object ? {
+    [P in keyof T]?: DeepPartial<T[P]>;
+} : T;
+

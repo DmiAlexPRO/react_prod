@@ -12,14 +12,14 @@ import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginU
 import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword';
 import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
-import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 export interface LoginFormProps {
     className?: string;
     onSuccess: () => void;
 }
 
-const initialReducers: ReducerList = {
+const initialReducers: ReducersList = {
     loginForm: loginReducer
 };
 

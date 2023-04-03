@@ -8,7 +8,7 @@ export default {
     component: Input,
 
     argTypes: {
-        backgroundColor: { control: 'color' }
+        backgroundColor: {control: 'color'}
     }
 } as ComponentMeta<typeof Input>;
 

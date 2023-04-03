@@ -1,3 +1,18 @@
 {
-    "title": "Профиль"
+    "title": "Профиль",
+    "yourName": "Ваше имя",
+    "yourLastname": "Ваша фамилия",
+    "yourAge": "Ваш возраст",
+    "yourCity": "Ваш город",
+    "yourUsername": "Ваш никнейм",
+    "yourAvatar": "Ваш аватар",
+    "yourCurrency": "Ваша валюта",
+    "yourCountry": "Ваша страна",
+    "profileLoadingError": "Ошибка при загрузке профиля",
+    "incorrectUserDataMsg": "Некорректные данные пользователя",
+    "incorrectAgeMsg": "Некорректный возраст",
+    "incorrectCountryMsg": "Некорректная страна",
+    "noDataMsg": "Нет данных",
+    "serverError": "Ошибка сервера"
+
 }

@@ -1,8 +1,11 @@
 import webpack from 'webpack';
 import {BuildOptions} from './types/config';
 import {buildCssLoader} from './loaders/buildCssLoader';
+import {buildBabelLoader} from './loaders/buildBabelLoader';
 
-export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+    const {isDev} = options;
+
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
         use: [
@@ -11,6 +14,16 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
             }
         ]
     };
+
+    const assetModules = {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+            filename: isDev ? '[path][name].[ext]' : '[contenthash].[ext]'
+        }
+    };
+
+    const babelLoader = buildBabelLoader(options);
 
     const svgLoader = {
         test: /\.svg$/,
@@ -24,21 +37,10 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/
     };
 
-    const babelLoader = {
-        test: /\.(js|jsx|ts| tsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env']
-            }
-        }
-    };
-
     const cssLoader = buildCssLoader(isDev);
 
     return [
-        fileLoader,
+        assetModules,
         svgLoader,
         babelLoader,
         typescriptLoader,

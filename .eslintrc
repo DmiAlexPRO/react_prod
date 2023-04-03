@@ -41,8 +41,8 @@
             "ignoreComments": true
         }],
         "require-jsdoc": "off",
-        "no-unused-vars": "warn",
-        "object-curly-spacing": "off",
+        "no-unused-vars": "off",
+        "object-curly-spacing": ["error", "never"],
         "comma-dangle": ["error", {
             "arrays": "never",
             "objects": "never",
@@ -62,10 +62,13 @@
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "error",
         "no-param-reassign": "off",
-        "react/display-name": "off"
+        "react/display-name": "off",
+        "no-undef": "off"
     },
     "globals": {
-        "_IS_DEV": true
+        "_IS_DEV": true,
+        "_API": true,
+        "_PROJECT": true
     },
     "overrides": [
         {

@@ -1,17 +1,23 @@
+import {RouteProps} from 'react-router-dom';
+
 export enum AppRoutes {
-    // eslint-disable-next-line no-unused-vars
     MAIN= 'main',
-    // eslint-disable-next-line no-unused-vars
     ABOUT = 'about',
-    // eslint-disable-next-line no-unused-vars
     PROFILE = 'profile',
-    // eslint-disable-next-line no-unused-vars
+    ARTICLES = 'articles',
+    ARTICLE_DETAILS = 'article_details',
     NOT_FOUND = 'not_found'
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.PROFILE]: '/profile',
+    [AppRoutes.PROFILE]: '/profile/', // + id
+    [AppRoutes.ARTICLES]: '/articles',
+    [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + id
     [AppRoutes.NOT_FOUND]: '*' // будет отрабатывать, елси все остальные варианты не подошли
 };
+
+export type AppRoutesProps = RouteProps & {
+    authOnly?: boolean;
+}
